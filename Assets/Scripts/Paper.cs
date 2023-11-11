@@ -9,7 +9,25 @@ public class Paper : MonoBehaviour
 
     private List<string> finalPaper = new List<string>();
 
-    
+    private Envelope envelope;
+
+    bool isInEnvelope = false;
+
+
+    private void Update()
+    {
+        if (Input.GetButtonUp("Fire1"))
+        {
+            Debug.Log("mouse up");
+            if (envelope != null && envelope.isOpen && isInEnvelope)
+            {
+                Debug.Log("close envelope");
+                envelope.Close();
+                Destroy(envelope.gameObject);
+            }
+        }
+    }
+
     private void Send()
     {
 
@@ -26,6 +44,17 @@ public class Paper : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        envelope = collision.gameObject.GetComponent<Envelope>();
+        isInEnvelope = true;
+        Debug.Log(isInEnvelope);
+    }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isInEnvelope = false;
+        Debug.Log(isInEnvelope);
+    }
 
 }

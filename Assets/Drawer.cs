@@ -31,14 +31,12 @@ public class Drawer : MonoBehaviour
             HideContents();
             transform.position = originPosition;
             isOpen = false;
-            Debug.Log("closed");
         }
         else
         {
             CreateContents();
             transform.position = openPosition;
             isOpen = true;
-            Debug.Log("opened");
         }
     }
 
