@@ -10,7 +10,7 @@ public class Envelope : MonoBehaviour
     public GameObject paper;
     public Transform openPosition;
 
-    bool isOpen = false;
+    [HideInInspector] public bool isOpen = false;
 
     SpriteRenderer spriteRenderer;
     Rigidbody2D rigidBody;
