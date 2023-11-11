@@ -7,7 +7,6 @@ public class GrabableObject : MonoBehaviour
 {
 
     private Camera camMain;
-    private int speed = 10;
 
     private void Awake()
     {
