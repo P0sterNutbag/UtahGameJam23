@@ -14,10 +14,12 @@ public class DropBox : MonoBehaviour
     {
         if (update)
         {
+            Debug.Log("1");
             newWord = word;
         }
         else
         {
+            Debug.Log("2");
             newWord = null;
         }
     }

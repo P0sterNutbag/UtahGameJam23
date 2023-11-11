@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Word : MonoBehaviour
 {
-    [SerializeField]
-    string wordValue;
+    
+    public string wordValue;
 
-    [SerializeField]
-    string wordType;
+    public string wordType;
 
     private DropBox currDropBox;
+
+    public TextMeshPro textMesh;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
