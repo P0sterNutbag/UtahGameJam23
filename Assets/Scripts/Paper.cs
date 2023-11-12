@@ -23,6 +23,8 @@ public class Paper : MonoBehaviour
             {
                 finalPaper.Add(word.newWord);
             }
+
+            Debug.Log(word);
         }
     }
 
