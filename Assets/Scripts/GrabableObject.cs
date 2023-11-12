@@ -9,6 +9,7 @@ public class GrabableObject : MonoBehaviour
 
     private Camera camMain;
     private SpriteRenderer spriteRenderer;
+    private int previousSorting;
 
     [HideInInspector] public bool isDragging = false;
 
@@ -19,6 +20,7 @@ public class GrabableObject : MonoBehaviour
     {
         camMain = Camera.main;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        previousSorting = GetComponent<SpriteRenderer>().sortingOrder;
     }
 
     private void Update()
@@ -28,7 +30,7 @@ public class GrabableObject : MonoBehaviour
             if (isDragging)
             {
                 isDragging = false;
-                spriteRenderer.sortingOrder = 0;
+                spriteRenderer.sortingOrder = previousSorting;
             }
         }    
         if (Input.GetButtonDown("Fire1"))

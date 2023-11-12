@@ -121,6 +121,7 @@ public class Word : MonoBehaviour
                         transform.position = currDropBox.transform.position;
                         transform.parent = currDropBox.transform;
                         currDropBox.updateNewWord(wordValue, score, true);
+                        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 10;
                         break;
                     }
                     else
@@ -129,17 +130,10 @@ public class Word : MonoBehaviour
                         currDropBox.updateNewWord("", 0, false);
                         currDropBox = null;
                         currBoxCollider = null;
+                        gameObject.GetComponent<SpriteRenderer>().sortingOrder= 3;
                     }
                 }
             }
-        }
-    }
-
-    private void SelecctDropBox(bool yes)
-    {
-        if(yes)
-        {
-
         }
     }
 }
