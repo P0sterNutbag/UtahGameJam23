@@ -16,7 +16,7 @@ public class RayCasting : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D rayHit = Physics2D.GetRayIntersection(Camera.main.ScreenPointToRay(Input.mousePosition));
-            Debug.Log(rayHit.transform.name);
+            //Debug.Log(rayHit.transform.name);
 
         }
     }
