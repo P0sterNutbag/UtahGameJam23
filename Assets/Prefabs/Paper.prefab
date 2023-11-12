@@ -13,11 +13,7 @@ GameObject:
   - component: {fileID: 6269502929088307140}
   - component: {fileID: 2016482555}
   - component: {fileID: 6407516289541873758}
-<<<<<<< Updated upstream
   - component: {fileID: -754316604274208662}
-=======
-  - component: {fileID: -8564872651982278713}
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Paper
   m_TagString: Untagged
@@ -151,11 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d85c40b21e63e84299a43e51d45591b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
 --- !u!114 &-754316604274208662
-=======
---- !u!114 &-8564872651982278713
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,13 +156,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2494395505597824332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: 6b845d5a590f7be42acc9dfe4233613b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
-  m_Script: {fileID: 11500000, guid: aa2d3ff015584884b95cb8af0b2ec35f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  words: []
->>>>>>> Stashed changes

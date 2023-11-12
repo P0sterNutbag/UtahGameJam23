@@ -29,17 +29,12 @@ public class Word : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-        if (collision.tag == "DropBox" && CheckColliding(currDropBox))
-        {
-            if (currDropBox != null)
+        
+            if (collision.tag == "DropBox")
             {
-                transform.parent = null;
-                currDropBox.updateNewWord(wordValue, false);
+                currDropBox.updateNewWord(wordValue, true);
                 currDropBox = null;
             }
-        }
-        
  
     }
 
@@ -48,13 +43,8 @@ public class Word : MonoBehaviour
         if (currDropBox != null)
         {
             transform.position = currDropBox.transform.position;
-            transform.parent = currDropBox.transform;
             currDropBox.updateNewWord(wordValue, true);
+            // UPDATE PAPER
         }
-    }
-
-    private bool CheckColliding(DropBox dropBox)
-    {
-        return true;
     }
 }

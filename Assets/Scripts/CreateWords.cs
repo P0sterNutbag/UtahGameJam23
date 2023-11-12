@@ -24,7 +24,7 @@ public class CreateWords : MonoBehaviour
     private void CreateRandomWords()
     {
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 10; i++)
         {
             int rand = UnityEngine.Random.Range(0, words.Count);
             GameObject inst = Instantiate(newWord, transform.position, transform.rotation);
