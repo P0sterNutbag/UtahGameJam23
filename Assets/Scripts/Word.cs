@@ -7,12 +7,13 @@ public class Word : MonoBehaviour
 {
     
     public string wordValue;
-
     public string wordType;
-
     private DropBox currDropBox;
-
     public TextMeshPro textMesh;
+
+    private BoxCollider2D currBoxCollider;
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -21,6 +22,7 @@ public class Word : MonoBehaviour
             if (collision.tag == "DropBox")
             {
                 GameObject currGameObject = collision.gameObject;
+                currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
                 currDropBox = currGameObject.GetComponent<DropBox>();
             }
         }
@@ -30,7 +32,7 @@ public class Word : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         
-            if (collision.tag == "DropBox")
+            if (collision.tag == "DropBox" && !gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider) && currDropBox != null)
             {
                 currDropBox.updateNewWord(wordValue, true);
                 currDropBox = null;
