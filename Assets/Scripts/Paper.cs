@@ -63,7 +63,13 @@ public class Paper : MonoBehaviour
 
         for (int i = 0; i < words.Count; i++)
         {
+            if (words[i] == null)
+            {
+                return;
+            }
             var word = words[i].GetComponent<DropBox>();
+
+            
 
             if (word.newWord == "")
             {

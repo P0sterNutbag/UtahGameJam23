@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
 
     public static GameController instance;
 
+
     void Awake()
     {
         instance = this;
@@ -53,11 +54,20 @@ public class GameController : MonoBehaviour
 
     public void SendNewPaper()
     {
+        Player player = gameObject.GetComponent<Player>();
         round++;
         if (round >= roundMax)
         {
-            GoodEnding();
-            return;
+            if (player.dictator < player.resistance)
+            {
+                GoodEnding();
+                return;
+            }
+            else
+            {
+                BadEnding();
+                return;
+            }
         }
         Instantiate(papers[round], sendPosition.position, sendPosition.rotation);
     }
