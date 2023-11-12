@@ -7,10 +7,11 @@ public class DropBox : MonoBehaviour
 {
 
     public string oldWord;
-    public string newWord;
-    public string type;
-    public int newScore;
     public int score;
+    public string type;
+    public string newWord;
+    public int newScore;
+    
     public TextMeshPro textMeshPro;
 
     private void Start()

@@ -66,7 +66,7 @@ public class Word : MonoBehaviour
 
     private void OnMouseUp()
     {
-        ChangeColorsOfType(wordType, originalColor);
+        ChangeColorsOfType(wordType, originalColor, true);
 
         if (currDropBox != null)
         {
@@ -87,11 +87,11 @@ public class Word : MonoBehaviour
 
     private void OnMouseDown()
     {
-        ChangeColorsOfType(wordType, Color.white);
+        ChangeColorsOfType(wordType, Color.white, false);
     }
 
 
-    private void ChangeColorsOfType(string type, Color color)
+    private void ChangeColorsOfType(string type, Color color, bool enable)
     {
 
         var objects = GameObject.FindGameObjectsWithTag("DropBox");
@@ -102,6 +102,17 @@ public class Word : MonoBehaviour
             {
                 currDropBox.GetComponent<SpriteRenderer>().color = color;
             }
+            /*else
+            {
+                if (enable)
+                {
+                    currDropBox.GetComponent<BoxCollider2D>().enabled = true;
+                }
+                else
+                {
+                    currDropBox.GetComponent<BoxCollider2D>().enabled = false;
+                }
+            }*/
         }
     }
         
