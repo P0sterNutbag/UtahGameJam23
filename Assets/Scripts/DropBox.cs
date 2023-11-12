@@ -28,7 +28,7 @@ public class DropBox : MonoBehaviour
         }
         else
         {
-            newWord = null;
+            newWord = "";
             newScore = score;
         }
     }
