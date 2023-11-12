@@ -32,14 +32,14 @@ public class Word : MonoBehaviour
                     currDropBox.updateNewWord("", 0, false);
                     currDropBox = null;
                 }*/
-                GameObject currGameObject = collision.gameObject;
-                currDropBox = currGameObject.GetComponent<DropBox>();
-                currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
-                if (wordType != currDropBox.type || !gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider))
+                GameObject tempCurrGameObject = collision.gameObject;
+                DropBox tempCurrDropBox = tempCurrGameObject.GetComponent<DropBox>();
+                BoxCollider2D tempCurrBoxCollider = tempCurrGameObject.GetComponent<BoxCollider2D>();
+                if (wordType == tempCurrDropBox.type || gameObject.GetComponent<BoxCollider2D>().IsTouching(tempCurrBoxCollider))
                 {
-                    transform.parent = null;
-                    currDropBox.updateNewWord("", 0, false);
-                    currDropBox = null;
+                    GameObject currGameObject = collision.gameObject;
+                    currDropBox = currGameObject.GetComponent<DropBox>();
+                    currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
                 }
             }
         }
@@ -82,6 +82,7 @@ public class Word : MonoBehaviour
                 currDropBox.updateNewWord("", 0, false);
             }
         }
+
     }
 
     private void OnMouseDown()
