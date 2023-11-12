@@ -174,3 +174,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   words: []
+  whichSide: 0
+  gameManager: {fileID: 7998533719987351629, guid: 7675ce7a689abdf4984eeff317df99f0, type: 3}

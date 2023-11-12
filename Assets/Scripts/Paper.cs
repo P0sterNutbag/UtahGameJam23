@@ -9,9 +9,11 @@ public class Paper : MonoBehaviour
     List<GameObject> words = new List<GameObject>();
 
     [SerializeField]
-    int whichSide; // 1 is dict, 0 is resistance??
+    int whichSide; // -1 is dict, 1 is resistance??
 
     private List<string> finalPaper = new List<string>();
+
+    public GameObject gameManager;
 
     private Envelope envelope;
 
@@ -51,15 +53,103 @@ public class Paper : MonoBehaviour
         }
     }
 
-    private void Score()
+    public void Score()
     {
-        int i = 0;
+        int score = 0;
 
+        int score1 = 0;
+        int score2 = 0;
+        int score3 = 0;
+
+        for (int i = 0; i < words.Count; i++)
+        {
+            var word = words[i].GetComponent<DropBox>();
+
+            if (word.newWord == "")
+            {
+                //finalPaper.Add(word.oldWord);
+                score1 = word.score;
+                
+            }
+            else
+            {
+                //finalPaper.Add(word.newWord);
+                score1 = word.newScore;
+            }
+
+            if (word.type == "verb")
+            {
+                var word2 = words[i+1].GetComponent<DropBox>();
+
+                if (word2.newWord == "")
+                {
+                    //finalPaper.Add(word.oldWord);
+                    score2 = word2.score;
+                }
+                else
+                {
+                    //finalPaper.Add(word.newWord);
+                    score2 = word2.newScore;
+                }
+                score = score + ( score1 * score2);
+
+                var word3 = words[i + 2].GetComponent<DropBox>();
+
+                if (score1 < 0)
+                {
+                    if (word2.newWord == "")
+                    {
+                        //finalPaper.Add(word.oldWord);
+                        score3 = word3.score;
+                    }
+                    else
+                    {
+                        //finalPaper.Add(word.newWord);
+                        score3 = word3.newScore;
+                    }
+                    score = score - score3;
+                }
+                else
+                {
+                    if (word2.newWord == "")
+                    {
+                        //finalPaper.Add(word.oldWord);
+                        score3 = word3.score;
+                    }
+                    else
+                    {
+                        //finalPaper.Add(word.newWord);
+                        score3 = word3.newScore;
+                    }
+                    score = score + score3;
+                }
+                i++;
+                i++;
+            }
+            else
+            {
+                score = score + score1;
+            }
+
+        }
+
+        Player player = gameManager.GetComponent<Player>();
+        if (whichSide == -1)
+        {
+            //Go to Dictator
+            player.ChangeDictator(score / 2);
+        }
+        else
+        {
+            player.ChangeResistance(score / 2);
+        }
+
+        /*int i = 0;
         foreach (GameObject gameObject in words)
         {
             var word = gameObject.GetComponent<DropBox>();
-            /*Debug.Log(word.oldWord);
-            Debug.Log(word.newWord);*/
+            *//*Debug.Log(word.oldWord);
+            Debug.Log(word.newWord);*//*
             if (word.newWord == "")
             {
                 finalPaper.Add(word.oldWord);
@@ -70,8 +160,11 @@ public class Paper : MonoBehaviour
             }
             print(finalPaper[i]);
             i++;
-        }
+        }*/
     }
+    
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -26,12 +26,12 @@ public class CreateWords : MonoBehaviour
         words.Add(("90", "number", 9));
         words.Add(("100", "number", 10));
 
-        words.Add(("kill", "verb", -5));
-        words.Add(("hurt", "verb", -3));
+        words.Add(("kills", "verb", -5));
+        words.Add(("hurts", "verb", -3));
         words.Add(("took", "verb", -1));
-        words.Add(("save", "verb", 5));
-        words.Add(("heal", "verb", 3));
-        words.Add(("gave", "verb", 1));
+        words.Add(("saves", "verb", 5));
+        words.Add(("heals", "verb", 3));
+        words.Add(("gives", "verb", 1));
 
         words.Add(("destoryed", "verb", -5));
         words.Add(("damaged", "verb", -2));
@@ -44,6 +44,7 @@ public class CreateWords : MonoBehaviour
         words.Add(("homes", "building", 3));
 
         words.Add(("civilians", "people", 3));
+        words.Add(("people", "people", 2));
         words.Add(("millitary", "people", 1));
 
 
