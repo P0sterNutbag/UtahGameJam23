@@ -30,6 +30,12 @@ public class Paper : MonoBehaviour
                     envelope.Close();
                     // Score gameObject
                     Score();
+
+                    for (var i = gameObject.transform.childCount - 1; i >= 0; i--)
+                    {
+                        Object.Destroy(gameObject.transform.GetChild(i).gameObject);
+                    }
+
                     Destroy(gameObject);
                 }
             }

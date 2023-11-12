@@ -47,11 +47,14 @@ public class Word : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
             
-            if (collision.tag == "DropBox" && !gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider) && currDropBox != null) 
+            if (collision.tag == "DropBox" && currBoxCollider != null && currDropBox != null) 
             {
-                transform.parent = null;
-                currDropBox.updateNewWord("", 0, false);
-                currDropBox = null;
+                if (!gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider))
+                {
+                    transform.parent = null;
+                    currDropBox.updateNewWord("", 0, false);
+                    currDropBox = null;
+                }
             }
  
     }

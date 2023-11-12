@@ -29,7 +29,8 @@ public class Drawer : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D targetObject = Physics2D.OverlapPoint(mousePos);
         }
     }
 
