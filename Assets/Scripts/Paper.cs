@@ -8,6 +8,9 @@ public class Paper : MonoBehaviour
     [SerializeField]
     List<GameObject> words = new List<GameObject>();
 
+    [SerializeField]
+    int whichSide; // 1 is dict, 0 is resistance??
+
     private List<string> finalPaper = new List<string>();
 
     private Envelope envelope;

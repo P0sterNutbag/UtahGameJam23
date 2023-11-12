@@ -27,18 +27,15 @@ public class Word : MonoBehaviour
         {
             if (collision.tag == "DropBox")
             {
-                if (currDropBox != null)
+                /*if (currDropBox != null)
                 {
                     currDropBox.updateNewWord("", 0, false);
                     currDropBox = null;
-                }
+                }*/
                 GameObject currGameObject = collision.gameObject;
                 currDropBox = currGameObject.GetComponent<DropBox>();
-                if (wordType == currDropBox.type)
-                {
-                    currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
-                }
-                else
+                currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
+                if (wordType != currDropBox.type || !gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider))
                 {
                     transform.parent = null;
                     currDropBox.updateNewWord("", 0, false);
@@ -51,17 +48,19 @@ public class Word : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-            
-            if (collision.tag == "DropBox" && currBoxCollider != null && currDropBox != null) 
+
+        if (collision.tag == "DropBox")
+        {
+            GameObject currGameObject = collision.gameObject;
+            DropBox tempDropBox = currGameObject.GetComponent<DropBox>();
+            if (currDropBox == tempDropBox)
             {
-                if (!gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider))
-                {
-                    transform.parent = null;
-                    currDropBox.updateNewWord("", 0, false);
-                    currDropBox = null;
-                }
+                transform.parent = null;
+                currDropBox.updateNewWord("", 0, false);
+                currDropBox = null;
             }
- 
+        }
+
     }
 
     private void OnMouseUp()
