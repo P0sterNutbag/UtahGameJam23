@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -18,21 +19,34 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        //InitializeFade(false);
+
     }
 
-    public void InitializeFade(bool fadeIn)
+    public void InitializeFade(string room)
     {
         Fade fade = Instantiate(fadePrefab, new Vector2(0, 0), transform.rotation).GetComponent<Fade>();
-        if (fadeIn) 
-        {
-            fade.fadeIn = fadeIn;
-        }
+        fade.fadeIn = true;
+        fade.nextRoom = room;
     }
 
     void NextRound()
     {
         round++;
-
     }
+
+    public void ChangeScene(string room)
+    {
+        SceneManager.LoadScene(room);
+    }
+
+    public void GoodEnding()
+    {
+        InitializeFade("GoodEnding");
+    }
+
+    public void BadEnding()
+    {
+        InitializeFade("BadEnding");
+    }
+
 }
