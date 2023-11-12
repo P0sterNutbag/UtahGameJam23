@@ -483,6 +483,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8549923374500756764, guid: d3a1f5f6d2190964390d76a68e87699e, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 7697883078308231908, guid: 81da81dee2439334ca7aeb1b4e1af288, type: 3}
+    - target: {fileID: 8549923374500756764, guid: d3a1f5f6d2190964390d76a68e87699e, type: 3}
       propertyPath: words.Array.size
       value: 6
       objectReference: {fileID: 0}
