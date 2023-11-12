@@ -9,10 +9,10 @@ using UnityEngine;
 public class Drawer : MonoBehaviour
 {
 
-    bool isOpen = false;
+    public bool isOpen = false;
 
-    Vector2 originPosition;
-    Vector2 openPosition;
+    public Vector2 originPosition;
+    public Vector2 openPosition;
 
     public List<GameObject> contents = new List<GameObject>();
     //public GameObject contents;
@@ -25,26 +25,7 @@ public class Drawer : MonoBehaviour
         HideContents();
     }
 
-    private void Update()
-    {
-        /*if (Input.GetMouseButtonDown(0))
-        {
-<<<<<<< Updated upstream
-            var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePos);
-        }
-=======
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
-            if (targetObject != null)
-            {
-
-            }
-        }*/
->>>>>>> Stashed changes
-    }
-
-    private void OnMouseDown()
+    /*private void OnMouseDown()
     {
         if (isOpen)
         {
@@ -58,35 +39,25 @@ public class Drawer : MonoBehaviour
             transform.position = openPosition;
             isOpen = true;
         }
-    }
+    }*/
 
-    private void CreateContents()
+    public void CreateContents()
     {
+        transform.position = openPosition;
+        isOpen = true;
         foreach (GameObject child in contents)
         {
             child.GetComponent<SpriteRenderer>().enabled = true;//SetActive(true);
-            /*foreach (Transform c in child.transform)
-            {
-                TextMeshPro text = c.GetComponent<TextMeshPro>();
-                if (text != null)
-                    text.enabled = true;
-            }*/
         }
     }
 
-    private void HideContents()
+    public void HideContents()
     {
+        transform.position = originPosition;
+        isOpen = false;
         foreach (GameObject child in contents)
         {
-            /*DrawerContent dc = child.GetComponent<DrawerContent>();
-            if (dc != null && dc.inDrawer)*/
             child.GetComponent<SpriteRenderer>().enabled = false;
-            /*foreach (Transform c in child.transform)
-            {
-                TextMeshPro text = c.GetComponent<TextMeshPro>();
-                if (text != null)
-                    text.enabled = false;
-            }*/
         }
     }
 }
