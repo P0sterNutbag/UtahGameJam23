@@ -5,7 +5,7 @@ using UnityEngine;
 public class Paper : MonoBehaviour
 {
     [SerializeField]
-    List<DropBox> words = new List<DropBox>();
+    List<GameObject> words = new List<GameObject>();
 
     private List<string> finalPaper = new List<string>();
 
@@ -18,15 +18,17 @@ public class Paper : MonoBehaviour
     {
         if (Input.GetButtonUp("Fire1"))
         {
-            Debug.Log("mouse up");
+            //Debug.Log("mouse up");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero, 0, LayerMask.GetMask("Container"));
             if (hit.collider != null)
             {
                 envelope = hit.collider.gameObject.GetComponent<Envelope>();
                 if (envelope != null && envelope.isOpen && envelope.GetComponent<SpriteRenderer>().enabled)
                 {
-                    Debug.Log("close envelope");
+                    //Debug.Log("close envelope");
                     envelope.Close();
+                    // Score gameObject
+                    Score();
                     Destroy(gameObject);
                 }
             }
@@ -39,19 +41,23 @@ public class Paper : MonoBehaviour
         }
     }
 
-    private void Send()
+    private void Score()
     {
-
-        foreach (DropBox word in words)
+        int i = 0;
+        foreach (GameObject gameObject in words)
         {
+            var word = gameObject.GetComponent<DropBox>();
             if (word.newWord == null)
             {
+                Debug.Log("oldWord");
                 finalPaper.Add(word.oldWord);
             }
             else
             {
                 finalPaper.Add(word.newWord);
             }
+            print(finalPaper[i]);
+            i++;
         }
     }
 
