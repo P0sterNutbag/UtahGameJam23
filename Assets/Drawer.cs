@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -24,6 +25,14 @@ public class Drawer : MonoBehaviour
         HideContents();
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+        }
+    }
+
     private void OnMouseDown()
     {
         if (isOpen)
@@ -45,6 +54,12 @@ public class Drawer : MonoBehaviour
         foreach (GameObject child in contents)
         {
             child.GetComponent<SpriteRenderer>().enabled = true;//SetActive(true);
+            /*foreach (Transform c in child.transform)
+            {
+                TextMeshPro text = c.GetComponent<TextMeshPro>();
+                if (text != null)
+                    text.enabled = true;
+            }*/
         }
     }
 
@@ -55,6 +70,12 @@ public class Drawer : MonoBehaviour
             /*DrawerContent dc = child.GetComponent<DrawerContent>();
             if (dc != null && dc.inDrawer)*/
             child.GetComponent<SpriteRenderer>().enabled = false;
+            /*foreach (Transform c in child.transform)
+            {
+                TextMeshPro text = c.GetComponent<TextMeshPro>();
+                if (text != null)
+                    text.enabled = false;
+            }*/
         }
     }
 }

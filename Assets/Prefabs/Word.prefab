@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6877602343235110317}
   - component: {fileID: 6496166430782976654}
   - component: {fileID: 6877602343235110316}
+  - component: {fileID: 4329048909472907761}
   m_Layer: 0
   m_Name: Word
   m_TagString: Untagged
@@ -165,6 +166,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &4329048909472907761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877602343235110359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b845d5a590f7be42acc9dfe4233613b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6898767634769175187
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,6 +189,7 @@ GameObject:
   - component: {fileID: 2441002279862339713}
   - component: {fileID: 6945763936724166514}
   - component: {fileID: 3322536271856159072}
+  - component: {fileID: 652467772857911705}
   m_Layer: 0
   m_Name: text
   m_TagString: Untagged
@@ -337,3 +351,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 6945763936724166514}
   m_maskType: 0
+--- !u!114 &652467772857911705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6898767634769175187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed22865286e55b645a9f95a715492027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
