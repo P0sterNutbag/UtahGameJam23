@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class Paper : MonoBehaviour
@@ -44,12 +45,14 @@ public class Paper : MonoBehaviour
     private void Score()
     {
         int i = 0;
+
         foreach (GameObject gameObject in words)
         {
             var word = gameObject.GetComponent<DropBox>();
-            if (word.newWord == null)
+            /*Debug.Log(word.oldWord);
+            Debug.Log(word.newWord);*/
+            if (word.newWord == "")
             {
-                Debug.Log("oldWord");
                 finalPaper.Add(word.oldWord);
             }
             else
