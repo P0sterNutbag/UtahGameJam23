@@ -8,6 +8,7 @@ public class Word : MonoBehaviour
     
     public string wordValue;
     public string wordType;
+    public int score;
     private DropBox currDropBox;
     public TextMeshPro textMesh;
 
@@ -34,7 +35,7 @@ public class Word : MonoBehaviour
         
             if (collision.tag == "DropBox" && !gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider) && currDropBox != null)
             {
-                currDropBox.updateNewWord(wordValue, true);
+                currDropBox.updateNewWord(wordValue, 0, false);
                 currDropBox = null;
             }
  
@@ -45,7 +46,7 @@ public class Word : MonoBehaviour
         if (currDropBox != null)
         {
             transform.position = currDropBox.transform.position;
-            currDropBox.updateNewWord(wordValue, true);
+            currDropBox.updateNewWord(wordValue, score, true);
             // UPDATE PAPER
         }
     }

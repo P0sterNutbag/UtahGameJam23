@@ -7,9 +7,9 @@ public class DropBox : MonoBehaviour
 {
 
     public string oldWord;
-
     public string newWord;
-
+    public int newScore;
+    public int score;
     public TextMeshPro textMeshPro;
 
     private void Start()
@@ -18,12 +18,13 @@ public class DropBox : MonoBehaviour
     }
 
 
-    public void updateNewWord(string word, bool update)
+    public void updateNewWord(string word, int score, bool update)
     {
         if (update)
         {
             Debug.Log("1");
             newWord = word;
+            newScore = score;
         }
         else
         {
