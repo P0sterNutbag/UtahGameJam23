@@ -11,10 +11,15 @@ public class Word : MonoBehaviour
     public int score;
     private DropBox currDropBox;
     public TextMeshPro textMesh;
+    private Color originalColor;
 
     private BoxCollider2D currBoxCollider;
 
 
+    private void Start()
+    {
+        originalColor = Color.gray; 
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -61,7 +66,7 @@ public class Word : MonoBehaviour
 
     private void OnMouseUp()
     {
-        ChangeColorsOfType(wordType, Color.red);
+        ChangeColorsOfType(wordType, originalColor);
 
         if (currDropBox != null)
         {
