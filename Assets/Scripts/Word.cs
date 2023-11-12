@@ -21,28 +21,30 @@ public class Word : MonoBehaviour
         originalColor = Color.gray; 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+   /* private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision != null)
         {
             if (collision.tag == "DropBox")
             {
-                /*if (currDropBox != null)
+                *//*if (currDropBox != null)
                 {
                     currDropBox.updateNewWord("", 0, false);
                     currDropBox = null;
-                }*/
+                }*//*
                 GameObject tempCurrGameObject = collision.gameObject;
                 DropBox tempCurrDropBox = tempCurrGameObject.GetComponent<DropBox>();
                 BoxCollider2D tempCurrBoxCollider = tempCurrGameObject.GetComponent<BoxCollider2D>();
                 if (wordType == tempCurrDropBox.type && gameObject.GetComponent<BoxCollider2D>().IsTouching(tempCurrBoxCollider))
                 {
+                    print("HIT");
                     GameObject currGameObject = collision.gameObject;
                     currDropBox = currGameObject.GetComponent<DropBox>();
                     currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
                 }
                 else
                 {
+                    transform.parent = null;
                     tempCurrDropBox.updateNewWord("", 0, false);
                     currDropBox = null;
                     currBoxCollider = null;
@@ -50,9 +52,9 @@ public class Word : MonoBehaviour
             }
         }
         
-    }
+    }*/
 
-    private void OnTriggerExit2D(Collider2D collision)
+    /*private void OnTriggerExit2D(Collider2D collision)
     {
 
         if (collision.tag == "DropBox")
@@ -67,30 +69,30 @@ public class Word : MonoBehaviour
                 currDropBox = null;
             }
         }
-
-    }
+*/
+    //}
 
     private void OnMouseUp()
     {
         ChangeColorsOfType(wordType, originalColor, true);
 
-        if (currDropBox != null)
+        /*if (currDropBox != null)
         {
-            if (wordType == currDropBox.type)
+            if (wordType == currDropBox.type && gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider))
             {
 
                 transform.position = currDropBox.transform.position;
                 transform.parent = currDropBox.transform;
                 currDropBox.updateNewWord(wordValue, score, true);
-                // UPDATE PAPER
             }
             else
             {
+                transform.parent = null;
                 currDropBox.updateNewWord("", 0, false);
                 currDropBox = null;
                 currBoxCollider = null;
             }
-        }
+        }*/
 
     }
 
@@ -100,7 +102,7 @@ public class Word : MonoBehaviour
     }
 
 
-    private void ChangeColorsOfType(string type, Color color, bool enable)
+    private void ChangeColorsOfType(string type, Color color, bool place)
     {
 
         var objects = GameObject.FindGameObjectsWithTag("DropBox");
@@ -110,20 +112,36 @@ public class Word : MonoBehaviour
             if (currDropBox.type == type)
             {
                 currDropBox.GetComponent<SpriteRenderer>().color = color;
+
+                if (place)
+                {
+                    BoxCollider2D tempBoxCollider = currDropBox.GetComponent<BoxCollider2D>();
+                    if (gameObject.GetComponent<BoxCollider2D>().IsTouching(tempBoxCollider))
+                    {
+                        transform.position = currDropBox.transform.position;
+                        transform.parent = currDropBox.transform;
+                        currDropBox.updateNewWord(wordValue, score, true);
+                        break;
+                    }
+                    else
+                    {
+                        transform.parent = null;
+                        currDropBox.updateNewWord("", 0, false);
+                        currDropBox = null;
+                        currBoxCollider = null;
+                    }
+                }
             }
-            /*else
-            {
-                if (enable)
-                {
-                    currDropBox.GetComponent<BoxCollider2D>().enabled = true;
-                }
-                else
-                {
-                    currDropBox.GetComponent<BoxCollider2D>().enabled = false;
-                }
-            }*/
         }
     }
-        
 
+    private void SelecctDropBox(bool yes)
+    {
+        if(yes)
+        {
+
+        }
+    }
 }
+
+
