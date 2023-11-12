@@ -373,6 +373,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: destoryed
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 24
@@ -538,6 +542,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: people
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 25
@@ -615,6 +623,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: civilians
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 22
@@ -807,6 +819,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: roads
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 23
@@ -1233,6 +1249,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1805,6 +1825,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: hurt
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -1998,6 +2022,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2160,6 +2188,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: save
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -2237,6 +2269,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -2319,6 +2355,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: kill
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -2577,6 +2617,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3322536271856159072, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
+      propertyPath: m_text
+      value: damage
+      objectReference: {fileID: 0}
     - target: {fileID: 6877602343235110313, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
       propertyPath: m_RootOrder
       value: 21
