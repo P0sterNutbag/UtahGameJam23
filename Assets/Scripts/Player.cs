@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
     public void ChangeResistance(int score)
     {
+        print("RES");
         resistance += score;
         print(resistance);
     }

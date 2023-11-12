@@ -101,7 +101,7 @@ public class Paper : MonoBehaviour
 
                 var word3 = words[i + 2].GetComponent<DropBox>();
 
-                if (score1 < 0)
+                /*if (score1 < 0)
                 {
                     if (word2.newWord == "")
                     {
@@ -128,7 +128,7 @@ public class Paper : MonoBehaviour
                         score3 = word3.newScore;
                     }
                     score = score + score3;
-                }
+                }*/
                 i++;
                 i++;
             }
@@ -144,11 +144,11 @@ public class Paper : MonoBehaviour
         if (whichSide == -1)
         {
             //Go to Dictator
-            player.ChangeDictator(score / 2);
+            player.ChangeDictator(score);
         }
         else
         {
-            player.ChangeResistance(score / 2); 
+            player.ChangeResistance(score); 
         }
 
         /*int i = 0;

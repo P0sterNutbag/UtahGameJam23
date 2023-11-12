@@ -2001,8 +2001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712380192a3eb6b4f93af452088a93cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dictator: 0
-  resistance: 0
+  dictator: 50
+  resistance: 50
 --- !u!114 &1474870430
 MonoBehaviour:
   m_ObjectHideFlags: 0

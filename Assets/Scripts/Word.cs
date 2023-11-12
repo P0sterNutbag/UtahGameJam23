@@ -18,7 +18,7 @@ public class Word : MonoBehaviour
 
     private void Start()
     {
-        originalColor = Color.gray; 
+        originalColor = new Color(184,194,185,255); 
     }
 
    /* private void OnTriggerEnter2D(Collider2D collision)
@@ -111,6 +111,7 @@ public class Word : MonoBehaviour
             var currDropBox = dropBox.GetComponent<DropBox>();
             if (currDropBox.type == type)
             {
+                originalColor = currDropBox.GetComponent<SpriteRenderer>().color;
                 currDropBox.GetComponent<SpriteRenderer>().color = color;
 
                 if (place)
