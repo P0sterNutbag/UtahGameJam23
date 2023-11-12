@@ -35,6 +35,7 @@ public class Word : MonoBehaviour
         
             if (collision.tag == "DropBox" && !gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider) && currDropBox != null)
             {
+                transform.parent = null;
                 currDropBox.updateNewWord(wordValue, 0, false);
                 currDropBox = null;
             }
@@ -43,11 +44,40 @@ public class Word : MonoBehaviour
 
     private void OnMouseUp()
     {
+        ChangeColorsOfType(wordType, Color.red);
+
         if (currDropBox != null)
         {
-            transform.position = currDropBox.transform.position;
-            currDropBox.updateNewWord(wordValue, score, true);
-            // UPDATE PAPER
+            if (wordType == currDropBox.type)
+            {
+
+                transform.position = currDropBox.transform.position;
+                transform.parent = currDropBox.transform;
+                currDropBox.updateNewWord(wordValue, score, true);
+                // UPDATE PAPER
+            }
         }
     }
+
+    private void OnMouseDown()
+    {
+        ChangeColorsOfType(wordType, Color.white);
+    }
+
+
+    private void ChangeColorsOfType(string type, Color color)
+    {
+
+        var objects = GameObject.FindGameObjectsWithTag("DropBox");
+        foreach (var dropBox in objects)
+        {
+            var currDropBox = dropBox.GetComponent<DropBox>();
+            if (currDropBox.type == type)
+            {
+                currDropBox.GetComponent<SpriteRenderer>().color = color;
+            }
+        }
+    }
+        
+
 }

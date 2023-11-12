@@ -63,6 +63,7 @@ public class CreateWords : MonoBehaviour
 
             wordValues.wordValue = words[rand].Item1;
             wordValues.wordType = words[rand].Item2;
+            wordValues.score = words[rand].Item3;
             wordValues.textMesh.text = words[rand].Item1;
 
         }

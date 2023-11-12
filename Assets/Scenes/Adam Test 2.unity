@@ -744,6 +744,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7739775438324821739, guid: 2f4e111f941af024889dae7913204965, type: 3}
+      propertyPath: type
+      value: people
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739775438324821739, guid: 2f4e111f941af024889dae7913204965, type: 3}
       propertyPath: oldWord
       value: people
       objectReference: {fileID: 0}
@@ -1116,7 +1120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3391729265026392321, guid: 7675ce7a689abdf4984eeff317df99f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -0.424
       objectReference: {fileID: 0}
     - target: {fileID: 3391729265026392321, guid: 7675ce7a689abdf4984eeff317df99f0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1206,6 +1210,10 @@ PrefabInstance:
     - target: {fileID: 7739775438324821737, guid: 2f4e111f941af024889dae7913204965, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739775438324821739, guid: 2f4e111f941af024889dae7913204965, type: 3}
+      propertyPath: type
+      value: verb
       objectReference: {fileID: 0}
     - target: {fileID: 7739775438324821739, guid: 2f4e111f941af024889dae7913204965, type: 3}
       propertyPath: oldWord
@@ -1432,6 +1440,10 @@ PrefabInstance:
     - target: {fileID: 7739775438324821737, guid: 2f4e111f941af024889dae7913204965, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739775438324821739, guid: 2f4e111f941af024889dae7913204965, type: 3}
+      propertyPath: type
+      value: number
       objectReference: {fileID: 0}
     - target: {fileID: 7739775438324821739, guid: 2f4e111f941af024889dae7913204965, type: 3}
       propertyPath: oldWord

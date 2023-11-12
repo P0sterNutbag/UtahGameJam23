@@ -8,6 +8,7 @@ public class DropBox : MonoBehaviour
 
     public string oldWord;
     public string newWord;
+    public string type;
     public int newScore;
     public int score;
     public TextMeshPro textMeshPro;
@@ -22,14 +23,13 @@ public class DropBox : MonoBehaviour
     {
         if (update)
         {
-            Debug.Log("1");
             newWord = word;
             newScore = score;
         }
         else
         {
-            Debug.Log("2");
             newWord = null;
+            newScore = score;
         }
     }
 }
