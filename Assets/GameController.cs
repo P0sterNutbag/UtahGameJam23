@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public GameObject fadePrefab;
+    public List<GameObject> papers = new List<GameObject>();
+    public Transform sendPosition;
 
     int round = 0;
-    public int roundMax = 10;
+    public int roundMax = 3;
 
     public static GameController instance;
 
@@ -47,6 +49,17 @@ public class GameController : MonoBehaviour
     public void BadEnding()
     {
         InitializeFade("BadEnding");
+    }
+
+    public void SendNewPaper()
+    {
+        round++;
+        if (round >= roundMax)
+        {
+            GoodEnding();
+            return;
+        }
+        Instantiate(papers[round], sendPosition.position, sendPosition.rotation);
     }
 
 }

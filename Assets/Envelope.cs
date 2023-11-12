@@ -13,6 +13,7 @@ public class Envelope : MonoBehaviour
     public bool isOpen = false;
     public bool sendIn = false;
     public bool sendAway = false;
+    private bool sendBack = false;
 
     SpriteRenderer spriteRenderer;
     Rigidbody2D rigidBody;
@@ -42,6 +43,16 @@ public class Envelope : MonoBehaviour
             rigidBody.position = Vector2.Lerp(rigidBody.position, sendPosition, 3f * Time.deltaTime);
             if (Vector2.Distance(rigidBody.position, sendPosition) < 0.1f)
             {
+                GameController.instance.SendNewPaper();
+                Destroy(gameObject);
+            }
+        }
+        if (sendBack)
+        {
+            Vector2 target = GameController.instance.sendPosition.position;
+            rigidBody.position = Vector2.Lerp(rigidBody.position, target, 3f * Time.deltaTime);
+            if (Vector2.Distance(rigidBody.position, target) < 0.1f)
+            {
                 Destroy(gameObject);
             }
         }
@@ -54,6 +65,7 @@ public class Envelope : MonoBehaviour
             spriteRenderer.sprite = openSprite;
             Instantiate(paper, openPosition.position, openPosition.rotation);
             isOpen = true;
+            sendBack = true;
         }
     }
 
