@@ -15,7 +15,8 @@ public class DropBox : MonoBehaviour
 
     private void Start()
     {
-        textMeshPro.text = oldWord; 
+        textMeshPro.text = oldWord;
+        newWord = "";
     }
 
 

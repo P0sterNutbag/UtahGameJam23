@@ -22,9 +22,23 @@ public class Word : MonoBehaviour
         {
             if (collision.tag == "DropBox")
             {
+                if (currDropBox != null)
+                {
+                    currDropBox.updateNewWord("", 0, false);
+                    currDropBox = null;
+                }
                 GameObject currGameObject = collision.gameObject;
-                currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
                 currDropBox = currGameObject.GetComponent<DropBox>();
+                if (wordType == currDropBox.type)
+                {
+                    currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
+                }
+                else
+                {
+                    transform.parent = null;
+                    currDropBox.updateNewWord("", 0, false);
+                    currDropBox = null;
+                }
             }
         }
         
@@ -32,11 +46,11 @@ public class Word : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        
-            if (collision.tag == "DropBox" && !gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider) && currDropBox != null)
+            
+            if (collision.tag == "DropBox" && !gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider) && currDropBox != null) 
             {
                 transform.parent = null;
-                currDropBox.updateNewWord(wordValue, 0, false);
+                currDropBox.updateNewWord("", 0, false);
                 currDropBox = null;
             }
  
@@ -55,6 +69,10 @@ public class Word : MonoBehaviour
                 transform.parent = currDropBox.transform;
                 currDropBox.updateNewWord(wordValue, score, true);
                 // UPDATE PAPER
+            }
+            else
+            {
+                currDropBox.updateNewWord("", 0, false);
             }
         }
     }
