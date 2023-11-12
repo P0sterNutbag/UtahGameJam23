@@ -85,7 +85,10 @@ MonoBehaviour:
   closedSprite: {fileID: 21300000, guid: 7c3edbff339e9f947ad44511ac3fe9aa, type: 3}
   paper: {fileID: 2494395505597824332, guid: d3a1f5f6d2190964390d76a68e87699e, type: 3}
   openPosition: {fileID: 0}
+  sendPosition: {x: 4, y: 0}
   isOpen: 0
+  sendIn: 0
+  sendAway: 0
 --- !u!212 &7800138686815259052
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -197,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d85c40b21e63e84299a43e51d45591b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDragging: 0
 --- !u!1 &5327232909316820424
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,12 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Undefined
+  - Drawer
+  - Envelope
+  - Paper
+  - Knife
+  - DropBox
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Container
   - Water
   - UI
   - 

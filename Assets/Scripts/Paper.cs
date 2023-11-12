@@ -19,12 +19,23 @@ public class Paper : MonoBehaviour
         if (Input.GetButtonUp("Fire1"))
         {
             Debug.Log("mouse up");
-            if (envelope != null && envelope.isOpen && isInEnvelope)
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.zero, 0, LayerMask.GetMask("Container"));
+            if (hit.collider != null)
+            {
+                envelope = hit.collider.gameObject.GetComponent<Envelope>();
+                if (envelope != null && envelope.isOpen && envelope.GetComponent<SpriteRenderer>().enabled)
+                {
+                    Debug.Log("close envelope");
+                    envelope.Close();
+                    Destroy(gameObject);
+                }
+            }
+            /*if (envelope != null && envelope.isOpen && isInEnvelope)
             {
                 Debug.Log("close envelope");
                 envelope.Close();
                 Destroy(envelope.gameObject);
-            }
+            }*/
         }
     }
 
