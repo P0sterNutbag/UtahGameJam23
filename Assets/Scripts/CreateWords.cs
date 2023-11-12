@@ -9,6 +9,7 @@ public class CreateWords : MonoBehaviour
 {
 
     public GameObject newWord;
+    public GameObject range;
 
     public List<(string, string, int)> words = new List<(string, string, int)> ();
 
@@ -54,11 +55,21 @@ public class CreateWords : MonoBehaviour
 
     private void CreateRandomWords()
     {
+        float maxX = range.transform.position.x + (range.transform.localScale.x/2);
+        float minX = range.transform.position.x - (range.transform.localScale.x / 2);
+        float maxY = range.transform.position.y - (range.transform.localScale.y / 2);
+        float minY = range.transform.position.y + (range.transform.localScale.y / 2);
+
 
         for (int i = 0; i < 8; i++)
         {
             int rand = UnityEngine.Random.Range(0, words.Count);
-            GameObject inst = Instantiate(newWord, transform.position, transform.rotation);
+
+            Vector3 spawnPos = new Vector3(UnityEngine.Random.Range(minX, maxX), UnityEngine.Random.Range(minY, maxY), 0);
+
+
+
+            GameObject inst = Instantiate(newWord, spawnPos, transform.rotation);
             Word wordValues = inst.GetComponent<Word>();
 
             wordValues.wordValue = words[rand].Item1;
