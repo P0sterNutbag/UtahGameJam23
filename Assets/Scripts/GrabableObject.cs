@@ -37,14 +37,19 @@ public class GrabableObject : MonoBehaviour
         {
             offset = transform.position - GetMousePos();
         }
+        if (isDragging)
+        {
+            transform.position = GetMousePos() + offset;
+            spriteRenderer.sortingOrder = 9;
+        }
     }
 
-    private void OnMouseDrag()
+    /*private void OnMouseDrag()
     {
         transform.position = GetMousePos() + offset; //Vector3.MoveTowards(transform.position, GetMousePos(), speed * Time.deltaTime);
         isDragging = true;
         spriteRenderer.sortingOrder = 9;
-    }
+    }*/
 
     Vector3 GetMousePos()
     {

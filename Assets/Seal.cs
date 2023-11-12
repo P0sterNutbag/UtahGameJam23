@@ -10,6 +10,10 @@ public class Seal : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Knife"))
-            envelope.Open();
+        {
+            GrabableObject grabable = collision.gameObject.GetComponent<GrabableObject>();
+            if (grabable != null && grabable.isDragging) 
+                envelope.Open();
+        }
     }
 }
