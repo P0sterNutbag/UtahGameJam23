@@ -35,11 +35,17 @@ public class Word : MonoBehaviour
                 GameObject tempCurrGameObject = collision.gameObject;
                 DropBox tempCurrDropBox = tempCurrGameObject.GetComponent<DropBox>();
                 BoxCollider2D tempCurrBoxCollider = tempCurrGameObject.GetComponent<BoxCollider2D>();
-                if (wordType == tempCurrDropBox.type || gameObject.GetComponent<BoxCollider2D>().IsTouching(tempCurrBoxCollider))
+                if (wordType == tempCurrDropBox.type && gameObject.GetComponent<BoxCollider2D>().IsTouching(tempCurrBoxCollider))
                 {
                     GameObject currGameObject = collision.gameObject;
                     currDropBox = currGameObject.GetComponent<DropBox>();
                     currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
+                }
+                else
+                {
+                    tempCurrDropBox.updateNewWord("", 0, false);
+                    currDropBox = null;
+                    currBoxCollider = null;
                 }
             }
         }
@@ -55,6 +61,7 @@ public class Word : MonoBehaviour
             DropBox tempDropBox = currGameObject.GetComponent<DropBox>();
             if (currDropBox == tempDropBox)
             {
+                print("OUT");
                 transform.parent = null;
                 currDropBox.updateNewWord("", 0, false);
                 currDropBox = null;
@@ -80,6 +87,8 @@ public class Word : MonoBehaviour
             else
             {
                 currDropBox.updateNewWord("", 0, false);
+                currDropBox = null;
+                currBoxCollider = null;
             }
         }
 
