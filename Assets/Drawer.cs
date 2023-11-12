@@ -27,11 +27,21 @@ public class Drawer : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
+<<<<<<< Updated upstream
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Collider2D targetObject = Physics2D.OverlapPoint(mousePos);
         }
+=======
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Collider2D targetObject = Physics2D.OverlapPoint(mousePosition);
+            if (targetObject != null)
+            {
+
+            }
+        }*/
+>>>>>>> Stashed changes
     }
 
     private void OnMouseDown()
