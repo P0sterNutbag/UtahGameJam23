@@ -26,7 +26,7 @@ public class Envelope : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         if (sendIn)
         {
-            paper = Resources.Load<GameObject>("0IntroPaperPaper"); 
+            //paper = Resources.Load<GameObject>("0IntroPaperPaper"); 
             force = new Vector2(Random.Range(0.1f, 0.2f), Random.Range(-0.05f, 0.05f));
         }
     }
