@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tommy.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/GoodEnding.unity
+    guid: 8b45e361a0c4c2947aea90ded2b69508
+  - enabled: 1
+    path: Assets/Scenes/BadEnding.unity
+    guid: 34899206af0b20d42961f1a8595539b8
   m_configObjects: {}

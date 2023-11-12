@@ -16,7 +16,10 @@ public class TextProperties : MonoBehaviour
 
     void Update()
     {
-        text.enabled = spriteRenderer.enabled;
-        text.sortingOrder = spriteRenderer.sortingOrder;
+        if (spriteRenderer != null)
+        {
+            text.enabled = spriteRenderer.enabled;
+            text.sortingOrder = spriteRenderer.sortingOrder;
+        }
     }
 }

@@ -9,6 +9,7 @@ public class Fade : MonoBehaviour
     float changeTimer = 0.0f;
     float changeTimerMax = 1f;
 
+    public string nextRoom;
     public bool fadeIn = true;
 
     private void Start()
@@ -34,11 +35,12 @@ public class Fade : MonoBehaviour
             }
             else
             {
-                changeTimer += Time.deltaTime;
+                GameController.instance.ChangeScene(nextRoom);
+                /*changeTimer += Time.deltaTime;
                 if (changeTimer >= changeTimerMax)
                 {
                     fadeIn = false;
-                }
+                }*/
             }
         } 
         else
