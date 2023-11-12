@@ -187,7 +187,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '-- NEWS --
 
-    Government forces rebuild 60 hospitals and build 20 tanks'
+    Resistence forces rebuild 60 hospitals and build 20 tanks '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ace4c724ceb499f468576942b7827aff, type: 2}
   m_sharedMaterial: {fileID: 4760466142859077452, guid: ace4c724ceb499f468576942b7827aff, type: 2}
@@ -480,7 +480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8549923374500756764, guid: d3a1f5f6d2190964390d76a68e87699e, type: 3}
       propertyPath: whichSide
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8549923374500756764, guid: d3a1f5f6d2190964390d76a68e87699e, type: 3}
       propertyPath: words.Array.size
