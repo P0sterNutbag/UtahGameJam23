@@ -154,6 +154,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a22046538457948919f1228fdaf28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
+  originPosition: {x: 0, y: 0}
+  openPosition: {x: 0, y: 0}
   contents: []
 --- !u!212 &189470314
 SpriteRenderer:
@@ -266,7 +269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712380192a3eb6b4f93af452088a93cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alligence: 0
+  dictator: 0
+  resistance: 0
 --- !u!1 &229250048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1311,6 +1315,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98a22046538457948919f1228fdaf28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOpen: 0
+  originPosition: {x: 0, y: 0}
+  openPosition: {x: 0, y: 0}
   contents:
   - {fileID: 643254110}
   - {fileID: 2019805649}

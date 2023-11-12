@@ -26,22 +26,23 @@ public class CreateWords : MonoBehaviour
         words.Add(("90", "number", 9));
         words.Add(("100", "number", 10));
 
-        words.Add(("kills", "verb", -5));
-        words.Add(("hurts", "verb", -3));
+        words.Add(("kill", "verb", -5));
+        words.Add(("hurt", "verb", -3));
         words.Add(("took", "verb", -1));
-        words.Add(("saves", "verb", 5));
-        words.Add(("heals", "verb", 3));
-        words.Add(("gives", "verb", 1));
+        words.Add(("save", "verb", 5));
+        words.Add(("heal", "verb", 3));
+        words.Add(("give", "verb", 1));
 
         words.Add(("destoryed", "verb", -5));
         words.Add(("damaged", "verb", -2));
-        words.Add(("built", "verb", 5));
-        words.Add(("rebuilt", "verb", 2));
+        words.Add(("build", "verb", 5));
+        words.Add(("rebuild", "verb", 2));
 
         words.Add(("tanks", "building", -5));
         words.Add(("police", "building", -3));
         words.Add(("hospital", "building", 5));
         words.Add(("homes", "building", 3));
+        words.Add(("roads", "building", 2));
 
         words.Add(("civilians", "people", 3));
         words.Add(("people", "people", 2));

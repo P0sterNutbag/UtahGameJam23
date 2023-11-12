@@ -16,12 +16,16 @@ public class Player : MonoBehaviour
     public void ChangeDictator(int score)
     {
         dictator += score;
+        print(dictator);
     }
 
     public void ChangeResistance(int score)
     {
         resistance += score;
+        print(resistance);
     }
+
+
 
 
 }

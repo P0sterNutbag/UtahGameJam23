@@ -132,8 +132,9 @@ public class Paper : MonoBehaviour
             }
 
         }
-
+        print(score);
         Player player = gameManager.GetComponent<Player>();
+
         if (whichSide == -1)
         {
             //Go to Dictator
@@ -141,7 +142,7 @@ public class Paper : MonoBehaviour
         }
         else
         {
-            player.ChangeResistance(score / 2);
+            player.ChangeResistance(score / 2); 
         }
 
         /*int i = 0;
