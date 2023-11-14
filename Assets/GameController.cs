@@ -58,8 +58,6 @@ public class GameController : MonoBehaviour
         round++;
         if (round >= roundMax)
         {
-            print("DIC: " + player.dictator);
-            print("RES: " + player.resistance);
             if (player.dictator <= player.resistance)
             {
                 GoodEnding();
