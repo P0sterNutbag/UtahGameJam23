@@ -196,5 +196,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e2fc6d7d55a6049a9a3201d61553fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newWord: {fileID: 0}
+  newWord: {fileID: 6877602343235110359, guid: 27c7d2dfbcdeb1f458163af3c2da9454, type: 3}
   range: {fileID: 5546905497156770292}

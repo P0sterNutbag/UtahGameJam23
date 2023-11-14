@@ -13,8 +13,13 @@ public class CreateWords : MonoBehaviour
 
     public List<(string, string, int)> words = new List<(string, string, int)> ();
 
+    private Drawer drawer;
+
     private void Start()
     {
+
+        drawer = FindObjectOfType<Drawer>();
+
         words.Add(("10", "number", 1));
         words.Add(("20", "number", 2));
         words.Add(("30", "number", 3));
@@ -72,6 +77,9 @@ public class CreateWords : MonoBehaviour
 
 
             GameObject inst = Instantiate(newWord, spawnPos, transform.rotation);
+
+            PutWordsInDrawer(i, inst);
+
             Word wordValues = inst.GetComponent<Word>();
 
             wordValues.wordValue = words[rand].Item1;
@@ -80,6 +88,13 @@ public class CreateWords : MonoBehaviour
             wordValues.textMesh.text = words[rand].Item1;
 
         }
+
+        //drawer.HideContents();
+    }
+
+    private void PutWordsInDrawer(int i, GameObject inst)
+    {
+        drawer.contents.Add(inst);
     }
 
 
