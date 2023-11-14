@@ -175,4 +175,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   words: []
   whichSide: 0
-  gameManager: {fileID: 7998533719987351629, guid: 7675ce7a689abdf4984eeff317df99f0, type: 3}
+  gameController: {fileID: 7697883078308231908, guid: 81da81dee2439334ca7aeb1b4e1af288, type: 3}

@@ -6,8 +6,8 @@ public class Fade : MonoBehaviour
 {
     float alpha;
     float alphaChange = 1f;
-    float changeTimer = 0.0f;
-    float changeTimerMax = 1f;
+    //float changeTimer = 0.0f;
+    //float changeTimerMax = 1f;
 
     public string nextRoom;
     public bool fadeIn = true;

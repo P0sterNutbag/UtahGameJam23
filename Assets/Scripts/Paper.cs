@@ -13,11 +13,18 @@ public class Paper : MonoBehaviour
 
     private List<string> finalPaper = new List<string>();
 
-    public GameObject gameManager;
+    [SerializeField]
+    GameController gameController;
 
     private Envelope envelope;
 
     bool isInEnvelope = false;
+
+    private void Start()
+    {
+        gameController = FindObjectOfType<GameController>();
+    }
+
 
 
     private void Update()
@@ -69,66 +76,29 @@ public class Paper : MonoBehaviour
             }
             var word = words[i].GetComponent<DropBox>();
 
-            
-
-            if (word.newWord == "")
-            {
-                //finalPaper.Add(word.oldWord);
-                score1 = word.score;
-                
-            }
-            else
-            {
-                //finalPaper.Add(word.newWord);
-                score1 = word.newScore;
-            }
+            score1 = GetScore(word);
 
             if (word.type == "verb")
             {
                 var word2 = words[i+1].GetComponent<DropBox>();
 
-                if (word2.newWord == "")
-                {
-                    //finalPaper.Add(word.oldWord);
-                    score2 = word2.score;
-                }
-                else
-                {
-                    //finalPaper.Add(word.newWord);
-                    score2 = word2.newScore;
-                }
+                score2 = GetScore(word2);
+
                 score = score + ( score1 * score2);
 
                 var word3 = words[i + 2].GetComponent<DropBox>();
 
-                /*if (score1 < 0)
+                score3 = GetScore(word3);
+
+                if (score1 > 0)
                 {
-                    if (word2.newWord == "")
-                    {
-                        //finalPaper.Add(word.oldWord);
-                        score3 = word3.score;
-                    }
-                    else
-                    {
-                        //finalPaper.Add(word.newWord);
-                        score3 = word3.newScore;
-                    }
-                    score = score - score3;
+                    score = score +  score3;
                 }
                 else
                 {
-                    if (word2.newWord == "")
-                    {
-                        //finalPaper.Add(word.oldWord);
-                        score3 = word3.score;
-                    }
-                    else
-                    {
-                        //finalPaper.Add(word.newWord);
-                        score3 = word3.newScore;
-                    }
-                    score = score + score3;
-                }*/
+                    score = score - score3;
+                }
+
                 i++;
                 i++;
             }
@@ -138,8 +108,8 @@ public class Paper : MonoBehaviour
             }
 
         }
-        print(score);
-        Player player = gameManager.GetComponent<Player>();
+        //print(score);
+        Player player = gameController.GetComponent<Player>();
 
         if (whichSide == -1)
         {
@@ -168,6 +138,24 @@ public class Paper : MonoBehaviour
             print(finalPaper[i]);
             i++;
         }*/
+    }
+
+    private int GetScore(DropBox word)
+    {
+        int score = 0;  
+        if (word.newWord == "")
+        {
+            //finalPaper.Add(word.oldWord);
+            score = word.score;
+        }
+        else
+        {
+            //finalPaper.Add(word.newWord);
+            score = word.newScore;
+        }
+
+
+        return score;
     }
     
 

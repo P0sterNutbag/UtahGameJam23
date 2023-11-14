@@ -9,11 +9,11 @@ public class Word : MonoBehaviour
     public string wordValue;
     public string wordType;
     public int score;
-    private DropBox currDropBox;
+    //private DropBox currDropBox;
     public TextMeshPro textMesh;
     private Color originalColor;
 
-    private BoxCollider2D currBoxCollider;
+    //private BoxCollider2D currBoxCollider;
 
 
     private void Start()
@@ -130,7 +130,6 @@ public class Word : MonoBehaviour
                         transform.parent = null;
                         currDropBox.updateNewWord("", 0, false);
                         currDropBox = null;
-                        currBoxCollider = null;
                         gameObject.GetComponent<SpriteRenderer>().sortingOrder= 3;
                     }
                 }
