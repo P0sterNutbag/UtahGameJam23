@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public GameObject fadePrefab;
     public List<GameObject> envelopes = new List<GameObject>();
     public Transform sendPosition;
+    public List<int> papersChosen = new List<int>();
 
     int round = 0;
     public int roundMax = 3;
@@ -95,20 +96,30 @@ public class GameController : MonoBehaviour
 
     private GameObject GetNextPaper()
     {
-        print("getnextpaper");
-        // Randomly choose the next paper here TODO:
 
         GameObject paper;
 
-
+        // May need to skip if we keep everything in place
         if (firstPaper) {
+            // Maybe Make instructions here
             paper = Resources.Load<GameObject>("Intro");
             firstPaper = false;
         }
         else
         {
-            int whichPaper = Random.Range(1, numOfPapers);
+            int whichPaper;
+
+            int i = numOfPapers;
+
+            do
+            {
+                whichPaper = Random.Range(0, numOfPapers);
+                i--;
+            } while (papersChosen.Contains(whichPaper) && i > 0);
+
             paper = Resources.Load<GameObject>("Papers/" +whichPaper + "Paper");
+            papersChosen.Add(whichPaper);
+
         }
 
         return paper;

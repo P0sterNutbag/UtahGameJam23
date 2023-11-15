@@ -1141,6 +1141,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7697883078308231907, guid: 81da81dee2439334ca7aeb1b4e1af288, type: 3}
+      propertyPath: envelope
+      value: 
+      objectReference: {fileID: 2116615814824142269, guid: 1b637907a4f2ff146a705403b4e963a4, type: 3}
+    - target: {fileID: 7697883078308231907, guid: 81da81dee2439334ca7aeb1b4e1af288, type: 3}
       propertyPath: roundMax
       value: 5
       objectReference: {fileID: 0}
