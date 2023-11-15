@@ -109,6 +109,8 @@ public class Paper : MonoBehaviour
 
         }
         //print(score);
+
+        score = score / 2;
         Player player = gameController.GetComponent<Player>();
 
         if (whichSide == -1)

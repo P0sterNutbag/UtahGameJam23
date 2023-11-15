@@ -22,7 +22,7 @@ public class Drawer : MonoBehaviour
     {
         originPosition = transform.position;
         openPosition = new Vector2(transform.position.x, transform.position.y - 0.3f);
-        //HideContents();
+        HideContents();
     }
 
     /*private void OnMouseDown()

@@ -13,7 +13,6 @@ public class Word : MonoBehaviour
     public TextMeshPro textMesh;
     private Color originalColor;
 
-    //private BoxCollider2D currBoxCollider;
 
 
     private void Start()
@@ -21,78 +20,9 @@ public class Word : MonoBehaviour
         originalColor = new Color(184,194,185,255); 
     }
 
-   /* private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision != null)
-        {
-            if (collision.tag == "DropBox")
-            {
-                *//*if (currDropBox != null)
-                {
-                    currDropBox.updateNewWord("", 0, false);
-                    currDropBox = null;
-                }*//*
-                GameObject tempCurrGameObject = collision.gameObject;
-                DropBox tempCurrDropBox = tempCurrGameObject.GetComponent<DropBox>();
-                BoxCollider2D tempCurrBoxCollider = tempCurrGameObject.GetComponent<BoxCollider2D>();
-                if (wordType == tempCurrDropBox.type && gameObject.GetComponent<BoxCollider2D>().IsTouching(tempCurrBoxCollider))
-                {
-                    print("HIT");
-                    GameObject currGameObject = collision.gameObject;
-                    currDropBox = currGameObject.GetComponent<DropBox>();
-                    currBoxCollider = currGameObject.GetComponent<BoxCollider2D>();
-                }
-                else
-                {
-                    transform.parent = null;
-                    tempCurrDropBox.updateNewWord("", 0, false);
-                    currDropBox = null;
-                    currBoxCollider = null;
-                }
-            }
-        }
-        
-    }*/
-
-    /*private void OnTriggerExit2D(Collider2D collision)
-    {
-
-        if (collision.tag == "DropBox")
-        {
-            GameObject currGameObject = collision.gameObject;
-            DropBox tempDropBox = currGameObject.GetComponent<DropBox>();
-            if (currDropBox == tempDropBox)
-            {
-                print("OUT");
-                transform.parent = null;
-                currDropBox.updateNewWord("", 0, false);
-                currDropBox = null;
-            }
-        }
-*/
-    //}
-
     private void OnMouseUp()
     {
         ChangeColorsOfType(wordType, originalColor, true);
-
-        /*if (currDropBox != null)
-        {
-            if (wordType == currDropBox.type && gameObject.GetComponent<BoxCollider2D>().IsTouching(currBoxCollider))
-            {
-
-                transform.position = currDropBox.transform.position;
-                transform.parent = currDropBox.transform;
-                currDropBox.updateNewWord(wordValue, score, true);
-            }
-            else
-            {
-                transform.parent = null;
-                currDropBox.updateNewWord("", 0, false);
-                currDropBox = null;
-                currBoxCollider = null;
-            }
-        }*/
 
     }
 

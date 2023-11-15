@@ -20,13 +20,13 @@ public class Cursor : MonoBehaviour
                     if (drawer.isOpen)
                     {
                         drawer.HideContents();
-                        Debug.Log("close");
+                        //Debug.Log("close");
                         return;
                     }
                     else
                     {
                         drawer.CreateContents();
-                        Debug.Log("open");
+                        //Debug.Log("open");
                         return;
                     }
                 }

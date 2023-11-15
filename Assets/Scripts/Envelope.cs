@@ -44,7 +44,7 @@ public class Envelope : MonoBehaviour
             if (Vector2.Distance(rigidBody.position, sendPosition) < 0.1f)
             {
                 GameController.instance.SendNewPaper();
-                Destroy(gameObject);
+                Destroy(gameObject); //I dont think we should destory the envalope, we should just keep one TODO
             }
         }
         if (sendBack)
@@ -63,7 +63,8 @@ public class Envelope : MonoBehaviour
         if (!isOpen)
         {
             spriteRenderer.sprite = openSprite;
-            Instantiate(paper, openPosition.position, openPosition.rotation);
+            Instantiate(paper, transform.position, transform.rotation);
+            //Instantiate(paper, openPosition.position, openPosition.rotation);
             isOpen = true;
             sendBack = true;
         }

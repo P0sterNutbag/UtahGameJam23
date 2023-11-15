@@ -78,7 +78,7 @@ public class CreateWords : MonoBehaviour
 
             GameObject inst = Instantiate(newWord, spawnPos, transform.rotation);
 
-            PutWordsInDrawer(i, inst);
+            PutWordsInDrawer(inst);
 
             Word wordValues = inst.GetComponent<Word>();
 
@@ -92,7 +92,7 @@ public class CreateWords : MonoBehaviour
         //drawer.HideContents();
     }
 
-    private void PutWordsInDrawer(int i, GameObject inst)
+    private void PutWordsInDrawer(GameObject inst)
     {
         drawer.contents.Add(inst);
     }

@@ -6,13 +6,18 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     public GameObject fadePrefab;
-    public List<GameObject> papers = new List<GameObject>();
+    public List<GameObject> envelopes = new List<GameObject>();
     public Transform sendPosition;
 
     int round = 0;
     public int roundMax = 3;
 
+    private int numOfPapers;
+    private bool firstPaper;
+
     public static GameController instance;
+
+    public GameObject envelope;
 
 
     void Awake()
@@ -22,7 +27,8 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-
+        firstPaper = true;
+        numOfPapers = Resources.LoadAll("Papers/").Length;
     }
 
     public void InitializeFade(string room)
@@ -55,7 +61,11 @@ public class GameController : MonoBehaviour
     public void SendNewPaper()
     {
         Player player = gameObject.GetComponent<Player>();
+
+
         round++;
+
+
         if (round >= roundMax)
         {
             if (player.dictator <= player.resistance)
@@ -69,7 +79,38 @@ public class GameController : MonoBehaviour
                 return;
             }
         }
-        Instantiate(papers[round], sendPosition.position, sendPosition.rotation);
+
+        GameObject nextPaper = GetNextPaper();
+
+        GameObject nextEnvelopeGO = Instantiate(envelope, sendPosition.position, sendPosition.rotation);
+
+        Envelope nextEnvelope = nextEnvelopeGO.GetComponent<Envelope>();
+        nextEnvelope.sendIn = true;
+
+        nextEnvelope.paper = nextPaper;
+
+        //Instantiate(envelopes[round], sendPosition.position, sendPosition.rotation);
     }
 
+
+    private GameObject GetNextPaper()
+    {
+        print("getnextpaper");
+        // Randomly choose the next paper here TODO:
+
+        GameObject paper;
+
+
+        if (firstPaper) {
+            paper = Resources.Load<GameObject>("Intro");
+            firstPaper = false;
+        }
+        else
+        {
+            int whichPaper = Random.Range(1, numOfPapers);
+            paper = Resources.Load<GameObject>("Papers/" +whichPaper + "Paper");
+        }
+
+        return paper;
+    }
 }
