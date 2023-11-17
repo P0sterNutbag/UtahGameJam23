@@ -1,17 +1,22 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using UnityEngine.Windows;
 
 public class CreatePaper : MonoBehaviour
 {
     public TextMeshPro textMeshPro;
     public string targetWord;
     public GameObject dropBox;
+    string pattern;
 
     void Start()
     {
-
+        string pattern = @"\[([^\]]+)\]";
         StartCoroutine(LateStart(0.1f));
+
 
     }
 
@@ -81,10 +86,40 @@ public class CreatePaper : MonoBehaviour
         return wordRectTransform;
     }
 
+    private string GetReplacementWord(string wordType)
+    {
+        return "Testing";
+    }
+
+    private void FindAndReplaceWord()
+    {
+
+        Regex regex = new Regex(pattern);
+        string sentence = textMeshPro.text;
+
+        // Replace matches using a loop
+        while (regex.IsMatch(sentence))
+        {
+            sentence = regex.Replace(sentence, (match) =>
+            {
+                string placeholder = match.Groups[1].Value; // Get the text inside the brackets
+                string replacement = GetReplacementWord(placeholder);
+                return replacement;
+            });
+        }
+
+
+        textMeshPro.text = sentence;
+
+
+    }
+
     IEnumerator LateStart(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
         //Your Function You Want to Call
+        FindAndReplaceWord();
         GetWordLocations();
+
     }
 }
