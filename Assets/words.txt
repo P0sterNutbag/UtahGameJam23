@@ -1,0 +1,4 @@
+100 number 10
+kill verb -5
+destroyed verb -5
+tanks building -5

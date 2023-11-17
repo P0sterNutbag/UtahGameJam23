@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -15,8 +16,15 @@ public class CreateWords : MonoBehaviour
 
     private Drawer drawer;
 
+    string[] crudWordList;
+    public List<(string, string, int)> wordList = new List<(string, string, int)>();
+
     private void Start()
     {
+
+        string path = "Assets/words.txt"; // Adjust the path based on the location of your file
+        crudWordList = File.ReadAllLines(path);
+        FilterWordList();
 
         drawer = FindObjectOfType<Drawer>();
 
@@ -95,6 +103,20 @@ public class CreateWords : MonoBehaviour
     private void PutWordsInDrawer(GameObject inst)
     {
         drawer.contents.Add(inst);
+    }
+
+
+    private void FilterWordList()
+    {
+        foreach (string line in crudWordList)
+        {
+            string[] word = line.Split(' ');
+
+            //print(word[0] + word[1] + int.Parse(word[2]));
+
+            // Display each word in the console
+            wordList.Add((word[0], word[1], int.Parse(word[2])));   
+        } 
     }
 
 

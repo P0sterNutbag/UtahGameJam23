@@ -61,13 +61,20 @@ public class CreatePaper : MonoBehaviour
         GameObject currGO = Instantiate(dropBox, dropBoxPos , dropBox.transform.rotation);
         currGO.transform.SetParent(gameObject.transform);
 
-        //currGO.transform = 
+        PopulateDropBox(currGO, word);
 
         DropBox currDropBox = currGO.GetComponent<DropBox>();
         BoxCollider2D boxCollider = currDropBox.GetComponent<BoxCollider2D>();
 
         // Set the size and position of the BoxCollider2D based on the RectTransform of the target word
         boxCollider.size = new Vector2(wordRectTransform.rect.width, wordRectTransform.rect.height);
+    }
+
+    private void PopulateDropBox(GameObject currGameObject, string word)
+    {
+        DropBox dropBox = currGameObject.GetComponent<DropBox>();
+        dropBox.oldWord = word;
+        return;
     }
 
     private string GetReplacementWord(string wordType)

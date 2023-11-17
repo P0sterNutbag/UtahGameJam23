@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using UnityEngine;
 
 public class Paper : MonoBehaviour
@@ -12,6 +13,8 @@ public class Paper : MonoBehaviour
     int whichSide; // -1 is dict, 1 is resistance??
 
     private List<string> finalPaper = new List<string>();
+    string[] crudWordList;
+    List<(string, string, int)> wordList;
 
     [SerializeField]
     GameController gameController;
@@ -23,8 +26,8 @@ public class Paper : MonoBehaviour
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
-    }
 
+    }
 
 
     private void Update()
