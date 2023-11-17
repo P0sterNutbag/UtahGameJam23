@@ -12,12 +12,14 @@ public class Word : MonoBehaviour
     //private DropBox currDropBox;
     public TextMeshPro textMesh;
     private Color originalColor;
+    private SpriteRenderer spriteRenderer;
 
 
 
     private void Start()
     {
-        originalColor = new Color(184,194,185,255); 
+        originalColor = new Color(184,194,185,255);
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void OnMouseUp()
@@ -29,6 +31,7 @@ public class Word : MonoBehaviour
     private void OnMouseDown()
     {
         ChangeColorsOfType(wordType, Color.white, false);
+        //spriteRenderer.enabled = true;
     }
 
 
@@ -52,7 +55,10 @@ public class Word : MonoBehaviour
                         transform.position = currDropBox.transform.position;
                         transform.parent = currDropBox.transform;
                         currDropBox.updateNewWord(wordValue, score, true);
-                        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 10;
+                        spriteRenderer.sortingOrder = 10;
+                        //spriteRenderer.enabled = false;
+
+
                         break;
                     }
                     else
@@ -60,7 +66,7 @@ public class Word : MonoBehaviour
                         transform.parent = null;
                         currDropBox.updateNewWord("", 0, false);
                         currDropBox = null;
-                        gameObject.GetComponent<SpriteRenderer>().sortingOrder= 3;
+                        spriteRenderer.sortingOrder= 3;
                     }
                 }
             }
