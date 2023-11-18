@@ -41,9 +41,12 @@ public class Word : MonoBehaviour
         var objects = GameObject.FindGameObjectsWithTag("DropBox");
         foreach (var dropBox in objects)
         {
+            
             var currDropBox = dropBox.GetComponent<DropBox>();
+            print(currDropBox.type);
             if (currDropBox.type == type)
             {
+                print("HERE");
                 originalColor = currDropBox.GetComponent<SpriteRenderer>().color;
                 currDropBox.GetComponent<SpriteRenderer>().color = color;
 
@@ -58,6 +61,7 @@ public class Word : MonoBehaviour
                         spriteRenderer.sortingOrder = 10;
                         //spriteRenderer.enabled = false;
 
+                        print("I TOUCH");
 
                         break;
                     }

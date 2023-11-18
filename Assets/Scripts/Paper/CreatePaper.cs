@@ -12,12 +12,17 @@ public class CreatePaper : MonoBehaviour
     public List<string> targetWords = new List<string>();
     public GameObject dropBox;
     string pattern;
+    GameController gameController;
+    CreateWords createWords;
+    public List<string> possibleWords = new List<string>();
 
     void Start()
     {
+        textMeshPro.sortingOrder = -1;
+        gameController = FindObjectOfType<GameController>();
+        createWords = FindObjectOfType<CreateWords>();
         pattern = @"\[([^\]]+)\]";
         StartCoroutine(LateStart(0.1f));
-
 
     }
 
@@ -51,9 +56,16 @@ public class CreatePaper : MonoBehaviour
         bounds.Encapsulate(textInfo.characterInfo[startIndex + length - 1].topRight);
 
         // Create a BoxCollider2D for the word
+        Vector3 centerPosition = textMeshPro.transform.TransformPoint(bounds.center);
+
+        // Create a BoxCollider2D for the word
         RectTransform wordRectTransform = new GameObject(word + " Transform").AddComponent<RectTransform>();
         wordRectTransform.SetParent(parentRectTransform);
-        wordRectTransform.localPosition = bounds.center;
+
+        // Set the world position of the RectTransform
+        wordRectTransform.position = centerPosition;
+
+        // Set the size of the RectTransform based on the bounds
         wordRectTransform.sizeDelta = new Vector2(bounds.size.x, bounds.size.y);
 
         Vector3 dropBoxPos = new Vector3(wordRectTransform.position.x, wordRectTransform.position.y, 0);
@@ -79,9 +91,18 @@ public class CreatePaper : MonoBehaviour
 
     private string GetReplacementWord(string wordType)
     {
-
+        possibleWords.Clear();
         // TODO: Add new replacement word to the list
-        string newWord = "te" + wordType;
+        for (int i = 0; i < createWords.wordList.Count; i++)
+        {
+            if (createWords.wordList[i].Item2 == wordType)
+            {
+                possibleWords.Add(createWords.wordList[i].Item1);
+            }
+        }
+
+        int randInt = Random.Range(0, possibleWords.Count);
+        string newWord = possibleWords[randInt];
         targetWords.Add(newWord);
         return newWord;
     }
@@ -106,11 +127,25 @@ public class CreatePaper : MonoBehaviour
 
         textMeshPro.text = sentence;
 
+
+        StartCoroutine(Pause(0.1f));
+
+    }
+
+    private void DropBoxLoop()
+    {
         for (int i = 0; i < targetWords.Count; i++)
         {
             GetWordLocation(targetWords[i]);
         }
+    }
 
+    IEnumerator Pause(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        //Your Function You Want to Call
+        DropBoxLoop();
+        textMeshPro.sortingOrder = 1;
     }
 
     IEnumerator LateStart(float waitTime)

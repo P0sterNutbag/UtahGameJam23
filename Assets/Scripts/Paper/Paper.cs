@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using UnityEngine;
+using static Unity.VisualScripting.Metadata;
 
 public class Paper : MonoBehaviour
 {
@@ -63,8 +64,23 @@ public class Paper : MonoBehaviour
         }
     }
 
+    private void GetDropBox()
+    {
+        foreach (Transform child in transform)
+        {
+            GameObject childGameObject = child.gameObject;
+
+            if (childGameObject.tag == "DropBox")
+            {
+                words.Add(childGameObject);
+            }
+        }
+    }
+
     public void Score()
     {
+        GetDropBox();
+
         int score = 0;
 
         int score1 = 0;

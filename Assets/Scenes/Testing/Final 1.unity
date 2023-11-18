@@ -399,7 +399,7 @@ PrefabInstance:
     - target: {fileID: 3482486774691775285, guid: c000c113bfe0a664486bf9efcde0c808, type: 3}
       propertyPath: paper
       value: 
-      objectReference: {fileID: 4246553050045807932, guid: 1442d4d8742d05745a6d628c446ecab0, type: 3}
+      objectReference: {fileID: 4246553050045807932, guid: c55d326e8a23bb748b52c5184417fb3c, type: 3}
     - target: {fileID: 3482486774691775297, guid: c000c113bfe0a664486bf9efcde0c808, type: 3}
       propertyPath: m_Name
       value: Envelope1

@@ -187,7 +187,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: '-- NEWS --
 
-    Government forces hurt 10 civilians and damage 50 roads'
+    Government forces [verbPeople] [number] [people]'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ace4c724ceb499f468576942b7827aff, type: 2}
   m_sharedMaterial: {fileID: 4760466142859077452, guid: ace4c724ceb499f468576942b7827aff, type: 2}
@@ -268,7 +268,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2494395505597824332, guid: d3a1f5f6d2190964390d76a68e87699e, type: 3}
       propertyPath: m_Name
-      value: Example
+      value: Example Test
       objectReference: {fileID: 0}
     - target: {fileID: 6861507033073411696, guid: d3a1f5f6d2190964390d76a68e87699e, type: 3}
       propertyPath: m_RootOrder
@@ -357,21 +357,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2494395505597824332, guid: d3a1f5f6d2190964390d76a68e87699e, type: 3}
   m_PrefabInstance: {fileID: 1761776072441577584}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4093937000863975775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4246553050045807932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 346c05a669ba99d47b835dcd5ce2f205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textMeshPro: {fileID: 1132227725}
-  targetWord: forces
-  dropBox: {fileID: 7739775438324821743, guid: 2f4e111f941af024889dae7913204965, type: 3}
 --- !u!114 &-1030274089682212540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +372,22 @@ MonoBehaviour:
   sentenceTemplates:
   - The [adjective] [noun] [verb] over the [adjective] [noun].
   - The [noun] is [verb] by the [adjective] [noun].
+--- !u!114 &4093937000863975775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4246553050045807932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 346c05a669ba99d47b835dcd5ce2f205, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1132227725}
+  targetWords: []
+  dropBox: {fileID: 7739775438324821743, guid: 2f4e111f941af024889dae7913204965, type: 3}
+  possibleWords: []
 --- !u!4 &5137461801969427968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6861507033073411696, guid: d3a1f5f6d2190964390d76a68e87699e, type: 3}
